@@ -73,8 +73,8 @@ public class SetListIntegers
     return list;
   }
   
-  setArray
-  =======
+setArray
+=======
 // For Array
   public static int[] setArray(int[] list)
   {
