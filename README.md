@@ -72,4 +72,53 @@ public class SetListIntegers
     }
     return list;
   }
+  
+  setArray
+  =======
+// For Array
+  public static int[] setArray(int[] list)
+  {
+    int maxValue = 500;
+    int minValue = 1;
+    int element; 
+    boolean isDuplicate = false; 
+    int[] usedNumberStorage = new int[maxValue - minValue + 1];
+    int storageSize = 0;
+    
+    for (int counter = 0; counter < list.length; counter++)
+    {
+      element = rng.nextInt(maxValue - minValue + 1) + minValue;
+      if (counter != 0)
+      {
+        do
+        {
+          if (isDuplicate)
+          {
+            element = rng.nextInt(maxValue - minValue + 1) + minValue;
+          }
+          for (int count = 0; count < usedNumberStorage.length; count++)
+          {
+            if (element == usedNumberStorage[count])
+            {
+              isDuplicate = true;
+              break;
+            } else
+            {
+              isDuplicate = false;
+            }
+          }
+        } while (isDuplicate); 
+      }
+      list[counter] = element;
+      usedNumberStorage[counter] = element;
+      storageSize++;
+      if (storageSize == usedNumberStorage.length)
+      {
+        System.out.println("List size exceeds number of possible values.Terminating prematurely.");
+        System.out.println("Excess number of list spaces: " + (list.length - (maxValue - minValue + 1)));
+        break;
+      }
+    }
+    return list;
+  }
 }
