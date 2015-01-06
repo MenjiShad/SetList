@@ -96,7 +96,7 @@ setArray
           {
             element = rng.nextInt(maxValue - minValue + 1) + minValue;
           }
-          for (int count = 0; count < usedNumberStorage.length; count++)
+          for (int count = 0; count < storageSize; count++)
           {
             if (element == usedNumberStorage[count])
             {
